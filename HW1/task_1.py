@@ -23,3 +23,8 @@ b = n % 10
 a = n // 10
 
 print(a + b + c)
+
+# решение учителя
+number = 123
+summa = number % 10 + number//10 % 10 + number//100
+print(summa)
