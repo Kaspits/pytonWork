@@ -28,8 +28,11 @@ def start():
             case 6:
                 search = view.input_search('Введите искомый элемент: ')
                 result = model.find_contact(search)
-                view.show_contacts(result, 'Контакты не найдены')
+                records = [model.phone_book[index] for index in result]
+                view.show_contacts(records, 'Контакты не найдены')
             case 7:
-                pass
+                search = view.input_search('Введите искомый элемент: ')
+                model.phone_book = model.delete_contact(
+                    search, model.phone_book)
             case 8:
                 return
